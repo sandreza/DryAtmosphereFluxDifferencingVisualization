@@ -108,9 +108,9 @@ function grab_grid(jl_file)
     p = mean(state, dims=1)[1, 90, :]
 
     scale =
-    rlist = range(0, 3e4, length=state_size[1])
-    θlist = range(-π, π, length=state_size[2])
-    ϕlist = range(0, π, length=state_size[3])
+    rlist = range(0, 3e4, length=state_size[3])
+    θlist = range(-90, 90, length=state_size[2])
+    ϕlist = range(-180, 180, length=state_size[1])
 
     r = collect(rlist)
     λ = collect(ϕlist)
