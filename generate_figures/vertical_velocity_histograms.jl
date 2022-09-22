@@ -1,6 +1,7 @@
 using HDF5, GLMakie
 
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
+data_path = "/Users/andresouza/Desktop/Julia/DryAtmosphereFluxDifferencingVisualization/"
 data1 = "zonalbandw_regular_planet.h5"
 data2 = "zonalbandw_small_planet.h5"
 
@@ -15,10 +16,10 @@ close(file2)
 
 ##
 histfig = Figure()
-ax11 = Axis(histfig[1, 1]; title = "latitude = 90")
-ax12 = Axis(histfig[1, 2]; title = "latitude = 45")
-ax21 = Axis(histfig[2, 1]; title = "latitude = 60")
-ax22 = Axis(histfig[2, 2]; title = "latitude = 15")
+ax11 = Axis(histfig[1, 1]; title="latitude = 90")
+ax12 = Axis(histfig[1, 2]; title="latitude = 45")
+ax21 = Axis(histfig[2, 1]; title="latitude = 60")
+ax22 = Axis(histfig[2, 2]; title="latitude = 15")
 
 lat_index = 90
 hist!(ax11, wzonalbands_small[:, lat_index, :][:], bins=1000, color=:red, alpha=0.5)
@@ -42,6 +43,19 @@ hist!(ax22, wzonalbands_regular[:, lat_index, :][:], bins=1000, color=:blue, alp
 xlims!(ax22, (-0.5, 0.5))
 
 display(histfig)
+##
+histfig = Figure()
+ax11 = Axis(histfig[1, 1]; title="HS")
+ax12 = Axis(histfig[1, 2]; title="Small Planet")
+
+lat_index = 90
+hist!(ax11, wzonalbands_small[:, lat_index, :][:], bins=1000, color=:red, alpha=0.5)
+hist!(ax11, 15 .* wzonalbands_regular[:, lat_index, :][:], bins=1000, color=:blue, alpha=0.5)
+xlims!(ax11, (-0.5, 0.5))
+xlims!(ax12, (-0.5, 0.5))
+
+display(histfig)
+
 ##
 
 for i in 1:5:91

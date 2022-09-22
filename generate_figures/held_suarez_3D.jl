@@ -19,8 +19,10 @@ close(jl_file)
 
 
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
+data_path = "/Users/andresouza/Desktop/Julia/DryAtmosphereFluxDifferencingVisualization/"
 data = "HeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
 data = "SmallHeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+data = "TraditionalSmallHeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
 filename = data_path * data
 jl_file = jldopen(data_path * data, "r+")
 state_val = jl_file["instantaneous"]["w"]
