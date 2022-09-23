@@ -1,4 +1,4 @@
-using HDF5, GLMakie
+using HDF5, GLMakie, Statistics, Random
 
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
 data = "convection_visualization_more_rez.h5"
