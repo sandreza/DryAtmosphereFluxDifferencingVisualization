@@ -16,9 +16,9 @@ begin
     options = (; titlesize=30, ylabelsize=32,
         xlabelsize=32, xgridstyle=:dash, ygridstyle=:dash, xtickalign=1,
         xticksize=10, ytickalign=1, yticksize=10,
-        xticklabelsize=10, yticklabelsize=10, ylabel="z [km]")
+        xticklabelsize=30, yticklabelsize=30, ylabel="z [km]")
 
-    fig = Figure(resolution=(1300, 800))
+    fig = Figure(resolution=(2500, 1400))
     volume_width = 3
     height_index = floor(Int, M / 10 * 4) # 120 for M = 300
     updraftquantile = 0.83 # 0.83
@@ -52,8 +52,8 @@ begin
     tstyle[:gap] = 10
     axis[:ticks][:textcolor] = :black
     axis[:ticks][:textsize] = 05
-    cbar1 = Colorbar(fig[2:7, 1], v1, label="θ [K]", width=25, ticklabelsize=20,
-        labelsize=20, ticksize=25, tickalign=1, height=Relative(3 / 4)
+    cbar1 = Colorbar(fig[2:7, 1], v1, label="θ [K]", width=25, ticklabelsize=30,
+        labelsize=30, ticksize=35, tickalign=1, height=Relative(3 / 4)
     )
 
     axis[:ticks][:ranges] = ([0.0, 0.5, 1.0], [0.0, 0.5, 1.0], [0.0, 0.5, 1.0])
@@ -61,13 +61,13 @@ begin
 
     line_options = (; linewidth=3, color=cmapa[end-4])
     lines!(stat_ax1, thm, zlist ./ 1e3; line_options...)
-    xlims!(stat_ax1, (303, 306))
+    xlims!(stat_ax1, (302.7, 306.3))
     ylims!(stat_ax1, (0.0, 2.0))
     lines!(stat_ax2, wpthp, zlist ./ 1e3; line_options...)
     ylims!(stat_ax2, (0.0, 2.0))
-    xlims!(stat_ax2, (-0.03, 0.10))
+    xlims!(stat_ax2, (-0.03, 0.11))
     lines!(stat_ax3, thpthp, zlist ./ 1e3; line_options...)
     ylims!(stat_ax3, (0.0, 2.0))
-    # rotate_cam!(fig.scene.children[1], (π / 16, 0, 0))
+    rotate_cam!(ax.scene, (π/16, -π/16, 0))
     display(fig)
 end
