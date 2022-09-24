@@ -30,7 +30,7 @@ slice_zonal = grab_state(s_string, jl_file1)
 colorrange, contour_levels, s_string = plot_helper(s_string, slice_zonal)
 colorrange = (-40, 40) # override
 λ, ϕ, r, p_coord = grab_grid(jl_file)
-s_string = "standard"
+s_string = "standard planet, full Coriolis"
 push!(state_names, s_string)
 slice_zonal = (state_val[1:end-1, :] + state_val[2:end, :]) * 0.5 / 1000 # average
 ax1 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
