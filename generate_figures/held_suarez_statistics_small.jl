@@ -54,7 +54,7 @@ push!(state_names, s_string)
 ax3 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
 contour_heatmap!(ax3, ϕ, p_coord, slice_zonal, contour_levels,
     colorrange, add_labels=add_label,
-    colormap=:thermometer, random_seed=12)
+    colormap=:thermometer, random_seed=13)
 hideydecorations!(ax3, grid=false)
 
 i = 4
@@ -106,7 +106,7 @@ push!(state_names, s_string)
 ax6 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
 contour_heatmap!(ax6, ϕ, p_coord, slice_zonal,
     contour_levels, colorrange, add_labels=add_label,
-    colormap=:thermometer, random_seed=10)
+    colormap=:thermometer, random_seed=12)
 hideydecorations!(ax6, grid=false)
 display(fig)
 close(jl_file)

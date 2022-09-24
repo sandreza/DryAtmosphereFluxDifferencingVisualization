@@ -25,8 +25,11 @@ function contour_heatmap!(ax, ϕ, p_coord, slice_zonal, contour_levels, colorran
 
     ax.xlabel = "Latitude [ᵒ]"
     ax.ylabel = "Stretched Height"
-    ax.xlabelsize = 25
-    ax.ylabelsize = 25
+    ax.xlabelsize = 35
+    ax.ylabelsize = 35
+    ax.xticklabelsize = 25
+    ax.yticklabelsize = 25
+
     ax.xticks = ([-80, -60, -30, 0, 30, 60, 80], ["80S", "60S", "30S", "0", "30N", "60N", "80N"])
     pressure_levels = [1000, 850, 700, 550, 400, 250, 100, 10]
     ax.yticks = (pressure_levels .* 1e2, string.(pressure_levels))
@@ -77,7 +80,7 @@ function contour_heatmap!(ax, ϕ, p_coord, slice_zonal, contour_levels, colorran
                 # end of heuristics
                 local location = Point3(segments[index]..., 2.0f0)
                 local sc = scatter!(ax, location, markersize = 20, align = (:center, :center), color = (:white, 0.1), strokecolor = :white)
-                local anno = text!(ax, [("$contour_val", location)], align = (:center, :center), textsize = 20, color = :black)
+                local anno = text!(ax, [("$contour_val", location)], align = (:center, :center), textsize = 25, color = :black)
 
                 delete!(ax, sc)
                 delete!(ax, cplot)

@@ -17,7 +17,7 @@ jl_file3 = jldopen(data_path * data3, "r+")
 
 
 # fig = Figure(resolution=(3400, 1000))
-fig = Figure(resolution=(2100,600))
+fig = Figure(resolution=(2700,700))
 add_label = true
 state_names = []
 
@@ -48,7 +48,7 @@ colorrange = (-40, 40) # override
 s_string = "small planet, traditional Coriolis"
 push!(state_names, s_string)
 ax2 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
-contour_heatmap!(ax2, ϕ, p_coord, slice_zonal, contour_levels, colorrange, add_labels=add_label, random_seed=1)
+contour_heatmap!(ax2, ϕ, p_coord, slice_zonal, contour_levels, colorrange, add_labels=add_label, random_seed=2)
 hideydecorations!(ax2, grid=false)
 
 i = 3
