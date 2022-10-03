@@ -30,7 +30,7 @@ function contour_heatmap!(ax, ϕ, p_coord, slice_zonal, contour_levels, colorran
     ax.xticklabelsize = 40
     ax.yticklabelsize = 40
 
-    ax.xticks = ([-80, -60, -30, 0, 30, 60, 80], ["80S", "60S", "30S", "0", "30N", "60N", "80N"])
+    ax.xticks = ([-80, -55, -30, 0, 30, 55, 80], ["80S", "55S", "30S", "0", "30N", "55N", "80N"])
     pressure_levels = [1000, 850, 700, 550, 400, 250, 100, 10]
     ax.yticks = (pressure_levels .* 1e2, string.(pressure_levels))
     ax.yreversed = true

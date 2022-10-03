@@ -79,5 +79,5 @@ rotate_cam!(ax.scene, (π / 16, -π / 16, 0))
 
 rowgap!(stats_fig, 40.0)
 # rowsize!(volume_fig, 1, Auto(10.5))
-colsize!(fig.layout, 2, Auto(2.5))
+colsize!(fig.layout, 2, Auto(1.75))
 display(fig)
