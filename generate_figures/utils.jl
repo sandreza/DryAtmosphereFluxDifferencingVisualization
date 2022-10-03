@@ -25,10 +25,10 @@ function contour_heatmap!(ax, ϕ, p_coord, slice_zonal, contour_levels, colorran
 
     ax.xlabel = "Latitude [ᵒ]"
     ax.ylabel = "Stretched Height"
-    ax.xlabelsize = 35
-    ax.ylabelsize = 35
-    ax.xticklabelsize = 25
-    ax.yticklabelsize = 25
+    ax.xlabelsize = 40
+    ax.ylabelsize = 40
+    ax.xticklabelsize = 40
+    ax.yticklabelsize = 40
 
     ax.xticks = ([-80, -60, -30, 0, 30, 60, 80], ["80S", "60S", "30S", "0", "30N", "60N", "80N"])
     pressure_levels = [1000, 850, 700, 550, 400, 250, 100, 10]

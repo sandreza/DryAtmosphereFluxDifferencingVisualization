@@ -1,9 +1,13 @@
 include("utils.jl")
 
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
-data = "HeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
+# data = "HeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
+# data = "HeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
 # data = "SmallHeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
-# data = "TraditionalSmallHeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+# data = "TraditionalSmallHeldSuarezStatisticsConsistent_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+# data = "SmallHeldSuarezStatisticsConsistent_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+# data = "SmallHeldSuarezStatisticsConsistent_Nev9_Neh10_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+data = "TraditionalSmallHeldSuarezStatisticsConsistent_Nev9_Neh10_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
 filename = data_path * data
 
 fig = Figure(resolution=(1700 + 600, 1000 + 400))
@@ -99,7 +103,7 @@ slice_zonal2, s_string = eddy_variance(s_string, jl_file)
 slice_zonal = 0.5 .* (slice_zonal1 + slice_zonal2)
 colorrange = (0, 360) # modify to extrema 
 
-s_string = L"\langle (u' u' + v' v')/2 \rangle"
+# s_string = L"\langle (u' u' + v' v')/2 \rangle"
 s_string = "⟨u'u' + v'v'⟩/2"
 push!(state_names, s_string)
 λ, ϕ, r, p_coord = grab_grid(jl_file)

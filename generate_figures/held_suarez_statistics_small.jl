@@ -3,7 +3,9 @@ include("utils.jl")
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
 # data = "HeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
 data = "SmallHeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+# data = "SmallHeldSuarezStatisticsConsistent_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
 # data = "TraditionalSmallHeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+data = "TraditionalSmallHeldSuarezStatisticsConsistent_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
 filename = data_path * data
 
 fig = Figure(resolution=(1700 + 600, 1000 + 400))

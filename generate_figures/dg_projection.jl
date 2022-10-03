@@ -61,10 +61,13 @@ u2 = refine * p2 * u_first
 ## Plotting
 fig = Figure(resolution = resolution = (1700+600, 1000+400)) 
 
+labelsize = 40
+options = (; xlabel="x", ylabel="y", ylabelsize=labelsize,
+    xlabelsize=labelsize, xticklabelsize = labelsize, yticklabelsize=labelsize, xgridstyle=:dash, ygridstyle=:dash, xtickalign=1,
+    xticksize=10, ytickalign=1, yticksize=10, xlabelpadding=-10)
+
 lims = (extrema(x)..., (-1.4,1.4)...)
-axo = Axis(fig[1,1], xlabel = "x", ylabel = "y", ylabelsize = 22, 
-    xlabelsize= 22, xgridstyle=:dash, ygridstyle=:dash, xtickalign = 1, 
-    xticksize=10, ytickalign=1, yticksize=10,  xlabelpadding = -10)
+axo = Axis(fig[1,1]; options...)
 
 axo.limits = lims
 axo.title = "Original"
@@ -73,9 +76,7 @@ for i in 1:K
     lines!(axo, x[:,i], uo[:,i], linewidth = 5)
 end
 
-ax0 = Axis(fig[1,2]; xlabel = "x", ylabel = "y", ylabelsize = 22, 
-    xlabelsize= 22, xgridstyle=:dash, ygridstyle=:dash, xtickalign = 1, 
-    xticksize=10, ytickalign=1, yticksize=10,  xlabelpadding = -10)
+ax0 = Axis(fig[1,2]; options...)
 ylims!(ax0, (-1.1, 1.1))
 ax0.limits = lims
 ax0.title = "Finite Volume"
@@ -84,9 +85,7 @@ for i in 1:K
     lines!(ax0, x[:,i], u0[:,i], linewidth = 5)
 end
 
-ax1 = Axis(fig[2,1], xlabel = "x", ylabel = "y", ylabelsize = 22, 
-    xlabelsize= 22, xgridstyle=:dash, ygridstyle=:dash, xtickalign = 1, 
-    xticksize=10, ytickalign=1, yticksize=10,  xlabelpadding = -10)
+ax1 = Axis(fig[2,1]; options...)
 ax1.limits = lims
 ax1.title = "Polynomial Order 1"
 ax1.titlesize = 32
@@ -94,9 +93,7 @@ for i in 1:K
     lines!(ax1, x[:,i], u1[:,i], linewidth = 5)
 end
 
-ax3 = Axis(fig[2,2], xlabel = "x", ylabel = "y", ylabelsize = 22, 
-    xlabelsize= 22, xgridstyle=:dash, ygridstyle=:dash, xtickalign = 1, 
-    xticksize=10, ytickalign=1, yticksize=10,  xlabelpadding = -10)
+ax3 = Axis(fig[2,2]; options...)
 ax3.limits = lims
 ax3.title = "Polynomial Order 2"
 ax3.titlesize = 32
