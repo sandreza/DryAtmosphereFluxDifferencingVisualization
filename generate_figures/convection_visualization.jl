@@ -58,8 +58,8 @@ tstyle[:gap] = 10
 axis[:ticks][:textcolor] = :black
 axis[:ticks][:textsize] = 05
 
-cbar1 = Colorbar(cbar_fig[1, 1], v1, label="θ [K]", width=25, ticklabelsize=30,
-    labelsize=40, ticksize=40, tickalign=1, height=Relative(3 / 4)
+cbar1 = Colorbar(cbar_fig[1, 1], v1, label="θ [K]", width=25, ticklabelsize=40,
+    labelsize=50, ticksize=40, tickalign=1, height=Relative(3 / 4)
 )
 
 axis[:ticks][:ranges] = ([0.0, 0.5, 1.0], [0.0, 0.5, 1.0], [0.0, 0.5, 1.0])

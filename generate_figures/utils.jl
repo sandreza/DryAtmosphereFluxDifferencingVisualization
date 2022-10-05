@@ -79,7 +79,7 @@ function contour_heatmap!(ax, ϕ, p_coord, slice_zonal, contour_levels, colorran
                 end
                 # end of heuristics
                 local location = Point3(segments[index]..., 2.0f0)
-                local sc = scatter!(ax, location, markersize = 20, align = (:center, :center), color = (:white, 0.1), strokecolor = :white)
+                local sc = scatter!(ax, location, markersize = 25, align = (:center, :center), color = (:white, 0.1), strokecolor = :white)
                 local anno = text!(ax, [("$contour_val", location)], align = (:center, :center), textsize = 25, color = :black)
 
                 delete!(ax, sc)

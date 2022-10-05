@@ -13,10 +13,10 @@ close(h5file)
 
 
 fig = Figure(resolution=(800, 600))
-options = (; titlesize=30, ylabelsize=32,
-    xlabelsize=32, xgridstyle=:dash, ygridstyle=:dash, xtickalign=1,
+options = (; titlesize=30, ylabelsize=25,
+    xlabelsize=25, xgridstyle=:dash, ygridstyle=:dash, xtickalign=1,
     xticksize=10, ytickalign=1, yticksize=10,
-    xticklabelsize=30, yticklabelsize=30, xlabel="Time [hours]", ylabel="Entrainment Layer Height [km]")
+    xticklabelsize=25, yticklabelsize=25, xlabel="Time [hours]", ylabel="Entrainment Layer Height [km]")
 
 ax1 = Axis(fig[1, 1]; options...)
 ylims!(ax1, (0, 3.0))

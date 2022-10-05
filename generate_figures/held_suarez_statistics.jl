@@ -1,13 +1,8 @@
 include("utils.jl")
 
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
-# data = "HeldSuarezStatistics_Nev6_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
-# data = "HeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5.jld2"
-# data = "SmallHeldSuarezStatistics_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
-# data = "TraditionalSmallHeldSuarezStatisticsConsistent_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
-# data = "SmallHeldSuarezStatisticsConsistent_Nev12_Neh12_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
-# data = "SmallHeldSuarezStatisticsConsistent_Nev9_Neh10_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
-data = "TraditionalSmallHeldSuarezStatisticsConsistent_Nev9_Neh10_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
+data = "HeldSuarezStatisticsConsistent_Nev8_Neh10_Nq1_5_Nq2_5_Nq3_5.jld2"
+
 filename = data_path * data
 
 fig = Figure(resolution=(1700 + 600, 1000 + 400))
@@ -28,7 +23,7 @@ push!(state_names, s_string)
 ax1 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
 contour_heatmap!(ax1, ϕ, p_coord, slice_zonal,
     contour_levels, colorrange,
-    add_labels=add_label, random_seed=1)
+    add_labels=add_label, random_seed=2)
 
 i = 2
 ii = (i - 1) % 3 + 1 # +1 on why 1 based indexing is wrong
