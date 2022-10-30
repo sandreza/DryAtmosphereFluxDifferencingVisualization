@@ -1,7 +1,6 @@
 using HDF5, GLMakie
 
 data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
-data_path = "/Users/andresouza/Desktop/Julia/DryAtmosphereFluxDifferencingVisualization/"
 data1 = "zonalbandw_regular_planet.h5"
 data2 = "zonalbandw_small_planet.h5"
 
