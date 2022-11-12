@@ -126,3 +126,5 @@ contour_heatmap!(ax6, ϕ, p_coord, slice_zonal6,
 hideydecorations!(ax6, grid=false)
 display(fig)
 close(jl_file)
+
+save(figure_directory * "FigureFavreSmall.png", fig)

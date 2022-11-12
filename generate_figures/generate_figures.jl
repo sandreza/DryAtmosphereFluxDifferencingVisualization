@@ -26,7 +26,13 @@ figure_number += 1
 
 # Held-Suarez Statistics
 include("held_suarez_statistics.jl")
-save(figure_directory * "Figure4.png", fig)
+save(figure_directory * "Figure" * string(figure_number) * ".png", fig)
+println("done with ", figure_number)
+figure_number += 1
+
+# Held-Suarez Statistics: Favre Flavor
+include("held_suarez_statistics_favre.jl")
+save(figure_directory * "Figure" * string(figure_number) * ".png", fig)
 println("done with ", figure_number)
 figure_number += 1
 

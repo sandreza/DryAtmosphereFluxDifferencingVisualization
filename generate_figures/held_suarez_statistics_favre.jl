@@ -42,7 +42,7 @@ jj = (i - 1) ÷ 3 + 1 # +1 on why 1 based indexing is wrong
 s_string = "u"
 colorrange, contour_levels, s_string = plot_helper(s_string, slice_zonal1)
 colorrange = (-40, 40) # override
-s_string = "⟨ρu⟩ / ⟨ρ⟩"
+s_string = "⟨ρu⟩/⟨ρ⟩"
 λ, ϕ, r, p_coord = grab_grid(jl_file)
 push!(state_names, s_string)
 ax1 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
@@ -57,7 +57,7 @@ s_string = "T"
 colorrange, contour_levels, s_string = plot_helper(s_string, slice_zonal2)
 colorrange = (180, 310)
 λ, ϕ, r, p_coord = grab_grid(jl_file)
-s_string = "⟨ρT⟩ / ⟨ρ⟩"
+s_string = "⟨ρT⟩/⟨ρ⟩"
 push!(state_names, s_string)
 ax2 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
 contour_heatmap!(ax2, ϕ, p_coord, slice_zonal2, contour_levels, colorrange, add_labels=add_label, colormap=:thermometer)
@@ -67,10 +67,15 @@ i = 3
 ii = (i - 1) % 3 + 1 # +1 on why 1 based indexing is wrong
 jj = (i - 1) ÷ 3 + 1 # +1 on why 1 based indexing is wrong
 
+s_string = "TT"
+slice_zonal, s_string = eddy_variance(s_string, jl_file)
+colorrange, contour_levels, s_string = plot_helper(s_string, slice_zonal)
+colorrange = (-8, 48) # override
+contour_levels = [16, 24, 32, 40] # [0, 8, 16, 24, 32, 40]
+
 s_string = "⟨T'T'⟩"
-s_string = "⟨ρTT⟩/⟨ρ⟩ - ⟨ρT⟩⟨ρT⟩/⟨ρ⟩²"
-colorrange = (-8, 70) # override
-contour_levels = [0, 20, 30, 40, 50, 60]
+s_string = "⟨ρTT⟩/⟨ρ⟩-⟨ρT⟩²/⟨ρ⟩²"
+
 λ, ϕ, r, p_coord = grab_grid(jl_file)
 push!(state_names, s_string)
 ax3 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
@@ -86,7 +91,7 @@ s_string = "uv"
 _, s_string = eddy_variance(s_string, jl_file)
 colorrange, contour_levels, s_string = plot_helper(s_string, slice_zonal4)
 colorrange = (-60, 60)
-s_string = "⟨ρuv⟩/⟨ρ⟩ - ⟨ρu⟩⟨ρv⟩/⟨ρ⟩²"
+s_string = "⟨ρuv⟩/⟨ρ⟩-⟨ρu⟩⟨ρv⟩/⟨ρ⟩²"
 λ, ϕ, r, p_coord = grab_grid(jl_file)
 push!(state_names, s_string)
 ax4 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
@@ -100,7 +105,7 @@ _, s_string = eddy_variance(s_string, jl_file)
 colorrange, contour_levels, s_string = plot_helper(s_string, slice_zonal5)
 # contour_levels = [-21, -18, -15, -12, -9, -6, -3, 3, 6, 9, 12, 15, 18, 21]
 colorrange = (-24, 24) # override
-s_string = "⟨ρvT⟩/⟨ρ⟩ - ⟨ρv⟩⟨ρT⟩/⟨ρ⟩²"
+s_string = "⟨ρvT⟩/⟨ρ⟩-⟨ρv⟩⟨ρT⟩/⟨ρ⟩²"
 λ, ϕ, r, p_coord = grab_grid(jl_file)
 push!(state_names, s_string)
 ax5 = fig[jj, ii] = Axis(fig, title=state_names[i], titlesize=40)
@@ -114,7 +119,7 @@ jj = (i - 1) ÷ 3 + 1 # +1 on why 1 based indexing is wrong
 colorrange = (0, 360) # modify to extrema 
 
 s_string = L"\langle (u' u' + v' v')/2 \rangle"
-s_string = "⟨u'u' + v'v'⟩/2"
+s_string = "(⟨ρvv+ρuu⟩/⟨ρ⟩-[⟨ρv⟩²+⟨ρu⟩²]/⟨ρ⟩²)/2"
 push!(state_names, s_string)
 
 contour_levels = [0, 40, 80, 160, 240, 320]
@@ -124,5 +129,5 @@ contour_heatmap!(ax6, ϕ, p_coord, slice_zonal6,
     contour_levels, colorrange, add_labels=add_label,
     colormap=:thermometer, random_seed=12)
 hideydecorations!(ax6, grid=false)
-display(fig)
 close(jl_file)
+display(fig)
