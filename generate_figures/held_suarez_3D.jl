@@ -39,7 +39,7 @@ clims = (-clims, clims)
 fig = Figure(resolution=(1520, 980))
 ax = LScene(fig, scenekw=(camera=cam3d!, show_axis=true))
 ax_text = Label(fig, title_string,
-    textsize=30, color=(:black, 0.85))
+    fontsize=30, color=(:black, 0.85))
 
 cmap = :balance # :Blues_9
 cmapa = RGBAf.(to_colormap(cmap))
@@ -52,12 +52,12 @@ axis = ax.scene[OldAxis]
 axis[:names, :axisnames] = ("longitude [ᵒ]", "latitude [ᵒ]", "height [km]")
 tstyle = axis[:names] #  get the nested attributes and work directly with them
 
-tstyle[:textsize] = 15
+tstyle[:fontsize] = 15
 tstyle[:textcolor] = (:black, :black, :black)
 tstyle[:font] = "helvetica"
 tstyle[:gap] = 10
 axis[:ticks][:textcolor] = :black
-axis[:ticks][:textsize] = 10
+axis[:ticks][:fontsize] = 10
 cbar1 = Colorbar(fig, v1, label=L" $w$ [m/s]", width=25, ticklabelsize=30,
     labelsize=30, ticksize=25, tickalign=1, height=Relative(3 / 4)
 )

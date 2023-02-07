@@ -1,6 +1,5 @@
 using HDF5, GLMakie
 
-data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
 data = "mixing_layer_depth_fixed.h5"
 data = "mixing_layer_depth_more_rez.h5"
 h5file = h5open(data_path * data, "r+")

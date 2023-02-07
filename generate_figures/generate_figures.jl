@@ -1,4 +1,5 @@
 figure_directory = "figures/"
+data_path = joinpath(@__DIR__ , "../Data/")
 
 ### Comment ###
 #= 

@@ -1,6 +1,5 @@
 using HDF5, GLMakie, Statistics, Random
 
-data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
 data = "convection_visualization_more_rez.h5"
 h5file = h5open(data_path * data, "r+")
 
@@ -51,12 +50,12 @@ axis = ax.scene[OldAxis]
 axis[:names, :axisnames] = ("x [km]", "y [km]", "z [km]")
 tstyle = axis[:names] #  get the nested attributes and work directly with them
 
-tstyle[:textsize] = 05
+tstyle[:fontsize] = 05
 tstyle[:textcolor] = (:black, :black, :black)
 tstyle[:font] = "helvetica"
 tstyle[:gap] = 10
 axis[:ticks][:textcolor] = :black
-axis[:ticks][:textsize] = 05
+axis[:ticks][:fontsize] = 05
 
 cbar1 = Colorbar(cbar_fig[1, 1], v1, label="θ [K]", width=25, ticklabelsize=40,
     labelsize=50, ticksize=40, tickalign=1, height=Relative(3 / 4)

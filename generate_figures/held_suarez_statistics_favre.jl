@@ -2,7 +2,6 @@ include("utils.jl")
 
 figure_directory = "figures/"
 
-data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
 data = "HeldSuarezStatisticsFavre_Nev8_Neh10_Nq1_5_Nq2_5_Nq3_5.jld2"
 
 filename = data_path * data

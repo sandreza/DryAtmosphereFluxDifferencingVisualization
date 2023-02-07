@@ -1,6 +1,5 @@
 include("utils.jl")
 
-data_path = "/Users/andresouza/Desktop/Data/FluxDifferencingPaper/"
 data = "SmallHeldSuarezStatisticsConsistent_Nev8_Neh10_Nq1_5_Nq2_5_Nq3_5_X_20.0.jld2"
 
 filename = data_path * data

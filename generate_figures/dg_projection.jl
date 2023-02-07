@@ -79,7 +79,7 @@ end
 ax0 = Axis(fig[1,2]; options...)
 ylims!(ax0, (-1.1, 1.1))
 ax0.limits = lims
-ax0.title = "Finite Volume"
+ax0.title = "Polynomial Order 0"
 ax0.titlesize = 32
 for i in 1:K
     lines!(ax0, x[:,i], u0[:,i], linewidth = 5)
